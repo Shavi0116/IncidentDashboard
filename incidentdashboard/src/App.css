@@ -1,0 +1,46 @@
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.dashboard {
+  background: #f5f5f5;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.incident-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.view-details-btn {
+  background: none;
+  border: none;
+  color: #0066cc;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.view-details-btn:hover {
+  text-decoration: underline;
+}
+
+.incident-description {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #e4a6a6;
+  border-radius: 4px;
+  border-left: 3px solid #0066cc;
+}
