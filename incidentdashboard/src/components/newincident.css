@@ -1,78 +1,25 @@
-.report-form-container {
-    background: white;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    margin-bottom: 2rem;
-  }
-  
-  .report-form-container h2 {
-    margin-top: 0;
-    color: #333;
-  }
-  
-  .form-group {
-    margin-bottom: 1.5rem;
-  }
-  
-  .form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-  }
-  
-  .form-group input,
-  .form-group textarea {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-family: inherit;
-  }
-  
-  .form-group textarea {
-    resize: vertical;
-  }
-  
-  .error {
-    border-color: #d32f2f !important;
-  }
-  
-  .error-message {
-    color: #d32f2f;
-    font-size: 0.875rem;
-    margin-top: 0.25rem;
-    display: block;
-  }
-  
-  .severity-options {
-    display: flex;
-    gap: 1rem;
-    margin-top: 0.5rem;
-  }
-  
-  .severity-option {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    cursor: pointer;
-  }
-  
-  .severity-option input {
-    width: auto;
-  }
-  
-  .submit-btn {
-    background: #0066cc;
-    color: white;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: 500;
-    transition: background 0.2s;
-  }
-  
-  .submit-btn:hover {
-    background: #0052a3;
-  }
+/* Add these to your existing CSS */
+.success-message {
+  background-color: #4caf50;
+  color: white;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.error {
+  border-color: #d32f2f !important;
+}
+
+.error-message {
+  color: #d32f2f;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: block;
+}
