@@ -1,21 +1,20 @@
 import { useState } from 'react';
 import { SeverityLevel } from '../types';
+import './newincident.css';
 
-interface ReportFormProps {
+interface NewIncidentProps {
   onSubmit: (incident: { title: string; description: string; severity: SeverityLevel }) => void;
 }
 
-export function ReportForm({ onSubmit }: ReportFormProps) {
+export function NewIncident({ onSubmit }: NewIncidentProps) {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [severity, setSeverity] = useState<SeverityLevel>('Medium');
   const [errors, setErrors] = useState<{ title?: string; description?: string }>({});
-  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Validate form
     const newErrors = {};
     if (!title.trim()) newErrors.title = 'Title is required';
     if (!description.trim()) newErrors.description = 'Description is required';
@@ -26,25 +25,56 @@ export function ReportForm({ onSubmit }: ReportFormProps) {
     }
 
     onSubmit({ title, description, severity });
-    // Reset form and show success message
     setTitle('');
     setDescription('');
-    setSeverity('Medium');
     setErrors({});
-    setIsSubmitted(true);
-    setTimeout(() => setIsSubmitted(false), 3000); // Hide after 3 seconds
   };
 
   return (
-    <div className="report-form-container">
+    <div className="new-incident-form">
       <h2>Report New Incident</h2>
-      {isSubmitted && (
-        <div className="success-message">
-          Form submitted successfully!
+      <form onSubmit={handleSubmit}>
+        <div className="form-group">
+          <label>Title*</label>
+          <input
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            className={errors.title ? 'error' : ''}
+          />
+          {errors.title && <span className="error-message">{errors.title}</span>}
         </div>
-      )}
-      <form onSubmit={handleSubmit} className="report-form">
-        {/* ... rest of your existing form JSX ... */}
+        
+        <div className="form-group">
+          <label>Description*</label>
+          <textarea
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            rows={4}
+            className={errors.description ? 'error' : ''}
+          />
+          {errors.description && <span className="error-message">{errors.description}</span>}
+        </div>
+        
+        <div className="form-group">
+          <label>Severity</label>
+          <div className="severity-options">
+            {(['Low', 'Medium', 'High'] as SeverityLevel[]).map((level) => (
+              <label key={level} className="severity-option">
+                <input
+                  type="radio"
+                  name="severity"
+                  value={level}
+                  checked={severity === level}
+                  onChange={() => setSeverity(level)}
+                />
+                <span className="radio-custom"></span>
+                {level}
+              </label>
+            ))}
+          </div>
+        </div>
+        
+        <button type="submit">Submit</button>
       </form>
     </div>
   );

@@ -1,25 +1,175 @@
-/* Add these to your existing CSS */
-.success-message {
-  background-color: #4caf50;
-  color: white;
-  padding: 1rem;
-  border-radius: 4px;
-  margin-bottom: 1.5rem;
-  animation: fadeIn 0.3s ease-in;
+.new-incident-form {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
+  animation: slideIn 0.3s ease-out;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.new-incident-form h2 {
+  margin-top: 0;
+  color: #2c3e50;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #34495e;
+  font-size: 0.95rem;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.form-group textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.severity-options {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.severity-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  position: relative;
+  padding-left: 28px;
+}
+
+.severity-option input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.radio-custom {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 18px;
+  width: 18px;
+  background-color: white;
+  border: 2px solid #bdc3c7;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.severity-option:hover input ~ .radio-custom {
+  border-color: #95a5a6;
+}
+
+.severity-option input:checked ~ .radio-custom {
+  background-color: #3498db;
+  border-color: #3498db;
+}
+
+.severity-option input:checked ~ .radio-custom:after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: white;
+}
+
+.severity-option input:focus ~ .radio-custom {
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.3);
+}
+
+button[type="submit"] {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 20%;
+  margin: 0.5rem auto;
+  display: block;
+}
+
+button[type="submit"]:hover {
+  background: #2980b9;
+  transform: translateY(-1px);
+}
+
+button[type="submit"]:active {
+  transform: translateY(0);
 }
 
 .error {
-  border-color: #d32f2f !important;
+  border-color: #e74c3c !important;
 }
 
 .error-message {
-  color: #d32f2f;
-  font-size: 0.875rem;
+  color: #e74c3c;
+  font-size: 0.85rem;
   margin-top: 0.25rem;
   display: block;
+}
+
+@media (max-width: 768px) {
+  .new-incident-form {
+    padding: 1.5rem;
+  }
+  
+  .severity-options {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  button[type="submit"] {
+    width: 100%;
+  }
 }

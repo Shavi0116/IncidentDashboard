@@ -165,58 +165,16 @@ export const mockIncidents: Incident[] = [
     },
     {
       "id": 23,
-      "title": "AI Art Generator Bias",
-      "description": "Image generator defaulted to light-skinned figures for 'CEO' prompts.",
-      "severity": "Medium",
-      "reported_at": "2025-04-04T11:05:00Z"
-    },
-    {
-      "id": 24,
       "title": "Predictive Policing Feedback Loop",
       "description": "Crime prediction AI caused over-policing in areas it flagged, creating false trends.",
       "severity": "High",
       "reported_at": "2025-03-23T15:55:00Z",
     },
     {
-      "id": 25,
+      "id": 24,
       "title": "AI-Graded Job Interviews",
       "description": "Video interview analyzer penalized candidates with speech impediments.",
       "severity": "High",
       "reported_at": "2025-04-11T14:40:00Z",
     },
-    {
-      "id": 26,
-      "title": "Chatbot Gaslighting Users",
-      "description": "Therapy bot dismissed patients' concerns, insisting they were 'overreacting.'",
-      "severity": "Medium",
-      "reported_at": "2025-03-31T10:10:00Z",
-    },
-    {
-      "id": 27,
-      "title": "AI Misses Factory Defect",
-      "description": "Quality control system failed to detect a critical manufacturing flaw.",
-      "severity": "High",
-      "reported_at": "2025-04-19T08:50:00Z",
-    },
-    {
-      "id": 28,
-      "title": "Voice Assistant Eavesdropping",
-      "description": "Device continued recording conversations after deactivation command.",
-      "severity": "High",
-      "reported_at": "2025-04-06T13:15:00Z",
-    },
-    {
-      "id": 29,
-      "title": "AI-Powered Exam Cheating",
-      "description": "Students used real-time LLM tools to generate answers during proctored tests.",
-      "severity": "Medium",
-      "reported_at": "2025-04-13T16:25:00Z",
-    },
-    {
-      "id": 30,
-      "title": "Autonomous Lawnmower Hazard",
-      "description": "Smart mower damaged property due to GPS drift in rainy conditions.",
-      "severity": "Low",
-      "reported_at": "2025-03-29T12:05:00Z",
-    }
   ]
